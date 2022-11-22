@@ -5,7 +5,7 @@ var newTabFlag;
 const getStorageInIndex = () =>
   new Promise((resolve) => {
     chrome.storage.local.get((savedObject) => {
-      if (savedObject) {
+      if (savedObject && savedObject.site) {
         siteList = savedObject.site.list;
         newTabFlag = savedObject.newTabFlag;
       }
